@@ -93,22 +93,23 @@ namespace CopaHAS.Models.Controllers
             }
         }
 
-        [HttpGet("GetByStatus/{status}")]
-        public IActionResult ObterJogadorPorStatus(string status){
-            statusJogador statusCerto = statusJogador.Nenhum;
+        // Ex. f)
+        [HttpGet("GetByStatus/{statusStr}")]
+        public IActionResult ObterJogadorPorStatus(string statusStr){
+            statusJogador status = statusJogador.Nenhum;
 
-            if(status == "Nenhum")
-                statusCerto = statusJogador.Nenhum;    
-            else if(status == "Titular")
-                statusCerto = statusJogador.Titular; 
-            else if(status == "Reserva")
-                statusCerto = statusJogador.Reserva;
-            else if(status == "DepartamentoMedico")
-                statusCerto = statusJogador.DepartamentoMedico;
-            else if(status == "NaoRelacionado")
-                statusCerto = statusJogador.NaoRelacionado;
+            if(statusStr == "Nenhum")
+                status = statusJogador.Nenhum;    
+            else if(statusStr == "Titular")
+                status = statusJogador.Titular; 
+            else if(statusStr == "Reserva")
+                status = statusJogador.Reserva;
+            else if(statusStr == "DepartamentoMedico")
+                status = statusJogador.DepartamentoMedico;
+            else if(statusStr == "NaoRelacionado")
+                status = statusJogador.NaoRelacionado;
 
-            List<Jogador> lJogadores = listaJogadores.FindAll(j => j.Status.Equals(statusCerto));
+            List<Jogador> lJogadores = listaJogadores.FindAll(j => j.Status.Equals(status));
 
             return Ok(lJogadores);
         }
