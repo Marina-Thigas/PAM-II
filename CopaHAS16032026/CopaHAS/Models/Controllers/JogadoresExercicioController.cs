@@ -55,11 +55,7 @@ namespace CopaHAS.Models.Controllers
         public IActionResult ObterEstatisticas()
         {
             int contaJog = listaJogadores.Count();
-            int somaNumCamisa = 0;
-
-            for(int i=0; i<contaJog; i++){
-                somaNumCamisa += listaJogadores[i].NumeroCamisa;
-            }
+            int somaNumCamisa = listaJogadores.Sum(x => x.NumeroCamisa);
             
             Dictionary<string, int> DicEstatisticas = new Dictionary<string, int>();
 
@@ -86,30 +82,17 @@ namespace CopaHAS.Models.Controllers
         public IActionResult PostarComValidacaoNome(Jogador j){
             if(j.Posicao != "Goleiro" && j.NumeroCamisa == 1)
                 return BadRequest("Somente o goleiro pode ter o número da camisa igual a 1!");
-            else
-            {
-                listaJogadores.Add(j);
-                return Ok(listaJogadores);
-            }
+
+            listaJogadores.Add(j);
+            return Ok(listaJogadores);
         }
 
         // Ex. f)
-        [HttpGet("GetByStatus/{statusStr}")]
-        public IActionResult ObterJogadorPorStatus(string statusStr){
-            statusJogador status = statusJogador.Nenhum;
+        [HttpGet("GetByStatus/{statusDigitadoId}")]
+        public IActionResult ObterJogadorPorStatus(int statusDigitadoId){
+            statusJogador statusEnum = (statusJogador)statusDigitadoId;
 
-            if(statusStr == "Nenhum")
-                status = statusJogador.Nenhum;    
-            else if(statusStr == "Titular")
-                status = statusJogador.Titular; 
-            else if(statusStr == "Reserva")
-                status = statusJogador.Reserva;
-            else if(statusStr == "DepartamentoMedico")
-                status = statusJogador.DepartamentoMedico;
-            else if(statusStr == "NaoRelacionado")
-                status = statusJogador.NaoRelacionado;
-
-            List<Jogador> lJogadores = listaJogadores.FindAll(j => j.Status.Equals(status));
+            List<Jogador> lJogadores = listaJogadores.FindAll(j => j.Status == statusEnum);
 
             return Ok(lJogadores);
         }
