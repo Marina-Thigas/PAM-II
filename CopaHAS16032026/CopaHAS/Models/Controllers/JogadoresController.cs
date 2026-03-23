@@ -17,15 +17,15 @@ namespace CopaHAS.Models.Controllers
         {
             new Jogador(){Id = 1, Nome = "Hugo Souza", NumeroCamisa=1, Posicao = "Goleiro", Status= Models.Enuns.statusJogador.Titular},
             new Jogador(){Id = 2, Nome = "Yuri Alberto", NumeroCamisa=1, Posicao = "Atacante", Status= Models.Enuns.statusJogador.Titular}, 
-            new Jogador(){Id = 2, Nome = "Fagner", NumeroCamisa = 23, Posicao = "Lateral Direito", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 3, Nome = "Gustavo Henrique", NumeroCamisa = 13, Posicao = "Zagueiro", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 4, Nome = "Félix Torres", NumeroCamisa = 3, Posicao = "Zagueiro", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 5, Nome = "Matheus Bidu", NumeroCamisa = 21, Posicao = "Lateral Esquerdo", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 6, Nome = "Raniele", NumeroCamisa = 14, Posicao = "Volante", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 7, Nome = "Maycon", NumeroCamisa = 7, Posicao = "Meio Campo", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 3, Nome = "Fagner", NumeroCamisa = 23, Posicao = "Lateral Direito", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 4, Nome = "Gustavo Henrique", NumeroCamisa = 13, Posicao = "Zagueiro", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 5, Nome = "Félix Torres", NumeroCamisa = 3, Posicao = "Zagueiro", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 6, Nome = "Matheus Bidu", NumeroCamisa = 21, Posicao = "Lateral Esquerdo", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 7, Nome = "Raniele", NumeroCamisa = 14, Posicao = "Volante", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 8, Nome = "Maycon", NumeroCamisa = 7, Posicao = "Meio Campo", Status = Models.Enuns.statusJogador.Titular},
             new Jogador(){Id = 8, Nome = "Rodrigo Garro", NumeroCamisa = 10, Posicao = "Meia", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 9, Nome = "Romero", NumeroCamisa = 11, Posicao = "Atacante", Status = Models.Enuns.statusJogador.Titular},
-            new Jogador(){Id = 10, Nome = "Wesley", NumeroCamisa = 36, Posicao = "Atacante", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 10, Nome = "Romero", NumeroCamisa = 11, Posicao = "Atacante", Status = Models.Enuns.statusJogador.Titular},
+            new Jogador(){Id = 11, Nome = "Wesley", NumeroCamisa = 36, Posicao = "Atacante", Status = Models.Enuns.statusJogador.Titular},
         };
 
         [HttpGet("GetAll")]
